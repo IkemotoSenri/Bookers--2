@@ -1,6 +1,7 @@
 <h1 class= "Books_detail">Books detail</h1>
+<%= attachment_image_tag @user, :profile_image, size: '30x30', fallback: "no_image.jpg" %>
 
-<p class="show_title" ><%= @book.title %></p>
+<p class="show_title" ><%=link_to @book.title, book_path(@book) %></p>
 <p class="show_body"><%= @book.body %></p>
 
  <%= link_to "edit", edit_book_path %>
