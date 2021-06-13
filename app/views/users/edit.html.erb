@@ -5,7 +5,11 @@
 <%= form_with model:@user, local:true do |f| %>
  <div class = "profile_name">Name</div>
   <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+ <div class = "profile_image">Image</div>
+  <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.jpg" %>
+  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+  <div class = "introduction ">Introduction</div>
+  <%= f.text_field :profile, class: "form-control" %></br>
   <%= f.submit "Update User" %>
 <% end %>
 
-  
